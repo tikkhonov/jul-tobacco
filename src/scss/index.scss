@@ -5,6 +5,27 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background: #404040;
+  box-shadow: 0 0 3px rbga(99, 99, 99, .9) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(05, 05, 05, .9); 
+  border-radius: 13px; 
+  border: 1px solid #404040;
+  transition: .3s
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #151515;
+}
+
 body {
   display: flex;
   flex-direction: column;
