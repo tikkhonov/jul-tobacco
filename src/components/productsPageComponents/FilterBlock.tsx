@@ -9,7 +9,7 @@ function FilterBlock() {
           <button className="plus"> + </button>
         </div>
         <div className="filter__item">
-          <div className="filter__item-title">Табак для кальяна</div>
+          <div className="filter__item-title">Чай</div>
           <button className="plus"> + </button>
         </div>
         <div className="filter__item filter__item-active">

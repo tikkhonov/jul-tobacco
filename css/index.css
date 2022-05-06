@@ -818,7 +818,7 @@ header .header-right .header--items .header__item .header__profile svg:hover {
   position: absolute;
   font-size: 22px;
   padding: 9px 5px;
-  top: 50%;
+  top: 100vh;
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;

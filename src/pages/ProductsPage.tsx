@@ -5,11 +5,13 @@ import Card from '../components/Card'
 import SearchBlock from '../components/productsPageComponents/SearchBlock'
 import SortAndFiltersBlock from '../components/productsPageComponents/SortAndFiltersBlock'
 import WarningBlock from '../components/WarningBlock'
+import Mark from '../components/Mark'
 
 function ProductsPage() {
   return (
     <div className="wrapper">
       <Header/>
+      <Mark/>
       <div className="container">
         <SearchBlock/>
         <div className="main">
