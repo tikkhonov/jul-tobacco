@@ -1,0 +1,59 @@
+.main-info {
+  margin: 24px 0;
+  border-radius: 13px;
+  border: 1px solid #6BFF37;
+
+  span {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 33px;
+    letter-spacing: 1px;
+  }
+  
+  li {
+    font-size: 22px;
+    margin: 2px 0;
+    letter-spacing: 1px;
+  }
+  
+  .text__title {
+    letter-spacing: 3px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 42px;
+  }
+
+  .text__subtitle {
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+  }
+
+  .first-block {
+    text-indent: 32px;
+    padding: 24px 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: #191919;
+    position: relative;
+    margin-top: 48px;
+
+    .inside--first-block {
+      padding: 13px 48px;
+    }
+  }
+
+  .second-block {
+    text-indent: 32px;
+    margin: 48px 0;
+    padding: 24px 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: #191919;
+
+    .inside--second-block {
+      padding: 13px 48px;
+    }
+  }
+}

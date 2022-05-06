@@ -1,0 +1,9 @@
+.cards-block-4x {
+  margin-bottom: 26px;
+
+  .container {
+    display: grid;
+    grid-template-columns: 306px 306px 306px 306px;
+    gap: 0 33px;
+  }
+}
