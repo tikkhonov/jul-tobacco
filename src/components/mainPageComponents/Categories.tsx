@@ -14,7 +14,7 @@ function Categories() {
               <div className="descr--content">
                 <span className="descr__title">Аксессуары</span>
                 <p className="descr__subtitle">
-                  В нашем магазине огромный асортимент высококачественных аксессуаров для кальянов, которые вы можете купить
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero ullam eligendi molestias fugiat aut quia quos officia quaerat saepe culpa?
                 </p>
               </div>
             </div>
@@ -28,7 +28,7 @@ function Categories() {
               <div className="descr--content">
                 <span className="descr__title">Чай</span>
                 <p className="descr__subtitle">
-                  В нашем магазине огромный асортимент высококачественных аксессуаров для кальянов, которые вы можете купить
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat placeat totam repellendus, sed fuga accusantium doloremque corporis ratione vel quis.
                 </p>
               </div>
             </div>
@@ -42,7 +42,7 @@ function Categories() {
               <div className="descr--content">
                 <span className="descr__title">Табак</span>
                 <p className="descr__subtitle">
-                  В нашем магазине огромный асортимент высококачественных аксессуаров для кальянов, которые вы можете купить
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia necessitatibus debitis odit recusandae cum aperiam ad maxime sed asperiores.
                 </p>
               </div>
             </div>

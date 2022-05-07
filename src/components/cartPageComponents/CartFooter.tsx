@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CartFooter() {
   return (
@@ -8,7 +9,9 @@ function CartFooter() {
         <div className="cart__footer_price">Общая сумма: 1313 ₽</div>
       </div>
       <div className="cart--footer-buttons">
-        <button className="cart__button_back">Вернуться назад</button>
+        <Link to="/">
+          <button className="cart__button_back">Вернуться назад</button>
+        </Link>
         <button className="cart__button_payment">Оплатить сейчас</button>
       </div>
     </div>
