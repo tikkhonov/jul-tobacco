@@ -77,7 +77,7 @@ function MainPage () {
         <div className="slider--block">
           <div className="slider--header">
             <div className="container">
-              <span>collections</span>/tobacco/banger/100g
+              <span>collections</span>/tobacco/bonche/30g
             </div>
           </div>
           <div className="slider--main">

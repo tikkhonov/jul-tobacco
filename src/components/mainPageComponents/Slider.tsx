@@ -15,7 +15,7 @@ const Slider = ({ children }: {
       const newOffset = currentOffset + SLIDER_BLOCK_WIDTH
 
       console.log(newOffset);
-      return newOffset
+      return Math.min(newOffset, 0)
     })
   }
   const onHandleRightCircle: React.ReactEventHandler = () => {
@@ -24,8 +24,10 @@ const Slider = ({ children }: {
     setOffset((currentOffset) => {
       const newOffset = currentOffset - SLIDER_BLOCK_WIDTH
 
-      console.log(newOffset);
-      return newOffset
+      const maxOffset: number = -(1907*2)
+      
+      console.log(newOffset, maxOffset);
+      return Math.max(newOffset, maxOffset)
     })
   }
   
