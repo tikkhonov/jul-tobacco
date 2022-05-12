@@ -13,9 +13,19 @@
 
     .sort-block_title {
       padding: 6px 13px;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 400;
       color: #EFEFEF;
+
+      span {
+        font-size: 24px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+          color: #6BFF37;
+        }
+      }
     }
 
     .sort--items {
@@ -123,6 +133,7 @@
           border-radius: 8px;
           cursor: pointer;
           transition: .3s;
+          width: 241.5px;
 
           &:hover {
             background-color: #CDCDCD;

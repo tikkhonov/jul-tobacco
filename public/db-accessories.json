@@ -1,0 +1,164 @@
+{
+  "accessories": [
+    {
+      "id": 0,
+      "imageURL": "https://sun9-38.userapi.com/s/v1/if2/8zHaUI6ns8ZjNrrdbSrScXDFqjk594BUeptJsmBxb4O9dm-smF_B9-Ri0a2w9neH3XV4ELQhpWOcwnecstynZr9B.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы Panda",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 199,
+      "category": 0,
+      "rating": 3
+    },
+    {
+      "id": 1,
+      "imageURL": "https://sun9-27.userapi.com/s/v1/if2/2vtuU476f2yIOaiEvxCL2JfscSmV9ALIRrLYPR3gGtKI_19KrzlqxnE68FM7n7VDholXLJsULlapQpZr6f0nxTkd.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы ES 13",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 269,
+      "category": 0,
+      "rating": 13
+    },
+    {
+      "id": 2,
+      "imageURL": "https://sun9-19.userapi.com/s/v1/if2/XENTFYD18W71cx_-lhpxOPkemGYwP1N68x-F-_0TUqLawh9Zr1GbJN3endvMxvQ5O5I2G7xd7i-jR9jU3SX9MTkr.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы Dark Side",
+      "type": "tongs",
+      "size": "30 см",
+      "price": 599,
+      "category": 0,
+      "rating": 9
+    },
+    {
+      "id": 3,
+      "imageURL": "https://sun9-51.userapi.com/s/v1/if2/-elYvMkQsVdhbkzNV3m7nQiu1sDC82UdkXJg89BiOZ9WUtndutOfKstCpdzTXWzZmTJj_HJ3hf-CtNtcNIWQ3Yve.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы Spear Dark Grey",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 459,
+      "category": 0,
+      "rating": 7
+    },
+    {
+      "id": 4,
+      "imageURL": "https://sun9-49.userapi.com/s/v1/if2/UV7UWhltKx02zwlLcIgo0Klt8mc7WEdLvjdtjEoM9vvevAxAq1rMzlvOIf7ln-LiSfVhASXyeDz1Cr6lNwZHkN58.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы ES 01",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 269,
+      "category": 0,
+      "rating": 13
+    },
+    {
+      "id": 5,
+      "imageURL": "https://sun9-39.userapi.com/s/v1/if2/Ln87JpjZxP900t5R1-k2c4GMAnUwp27d331VdG8W46IHGB8bkPsexlYPLfSZrom48mloN7BUpC5QufRO7uC9AWOe.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы ES 12",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 269,
+      "category": 0,
+      "rating": 11
+    },
+    {
+      "id": 6,
+      "imageURL": "https://sun9-32.userapi.com/s/v1/if2/I9W4HErz6xj6dTwTitbNT8Gp7OLr3g4rxN5Q64wazGQQSj-AX1_4If1fnVnXxkS6cSz7aY7oN_wFoBS2xTv8nxki.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы ESS Punisher",
+      "type": "tongs",
+      "size": "",
+      "price": 599,
+      "category": 0,
+      "rating": 15
+    },
+    {
+      "id": 7,
+      "imageURL": "https://sun9-52.userapi.com/s/v1/if2/GSpya9Mmk3-V-MLtrLpdPyoAkXnFkpk9lRi09gTPRneVs2LKlloI9EPk8uHXOVeq3AyXmbFvvSqfQDFwBVSRpch5.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы ES 06",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 269,
+      "category": 0,
+      "rating": 3
+    },
+    {
+      "id": 8,
+      "imageURL": "https://sun9-63.userapi.com/s/v1/if2/y5ihDEwAdyRBR-rQpbGTWEIpPoC6LiHreFsuLnM8nsflB3mabe-pixxXcF6osjtyAZGYy358c5UL9P9SGDToTHyb.jpg?size=450x450&quality=96&type=album",
+      "name": "Щипцы ES 14",
+      "type": "tongs",
+      "size": "25 см",
+      "price": 269,
+      "category": 0,
+      "rating": 13
+    },
+    {
+      "id": 9,
+      "imageURL": "https://sun9-19.userapi.com/s/v1/if2/VTCSsQgRnNrhi-WLkGUHurmU5u0093LooG-prsG-QRfG-wjQ6AG24RzXOwqcqVw5MEBbCmOGHtRqCDzfPdbg--YJ.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Lime",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 18
+    },
+    {
+      "id": 10,
+      "imageURL": "https://sun9-14.userapi.com/s/v1/if2/ZB1FY7vYoXdi350E2-Ap--Ccl8y_NDO19IsplyXC0s3PpWeOH_OmDfD6dEK_M1ubxd-baVwMiqKQPvVscZ9qH-d6.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Yellow",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 18
+    },
+    {
+      "id": 11,
+      "imageURL": "https://sun9-34.userapi.com/s/v1/if2/rwLctxqNVOdPxTaLPs7McWLIchr6taQi1_EQQgP-8KPfcRVdIcnenxSkKroY0oRjuhXyNm_AZ4wt5ELY-9ZiClA8.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Black",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 18
+    },
+    {
+      "id": 12,
+      "imageURL": "https://sun9-64.userapi.com/s/v1/if2/6hO8dW8F3GYr6C8nhTt3vf2puYw6_K-YLSGS0wUU6cLFl7m4lOiuD-jfTMZ4DzruczIHovEQgJQkZD9ASBjLOBsV.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Brown",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 18
+    },
+    {
+      "id": 13,
+      "imageURL": "https://sun9-82.userapi.com/s/v1/if2/Yx9xzy1EGSh7xPH0I6gDgPFs1_HHyPFqSysGhe-6azquKMf4z9GzoQuHkqEd8eHwJlKby2EJjMOaQqVPWuLGCTov.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Green",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 1313
+    },
+    {
+      "id": 14,
+      "imageURL": "https://sun9-12.userapi.com/s/v1/if2/C97lU_V3p9p8Dl7JPk8Tf6eGGkq7Hhzm5IuPmiueGvMRKqi0HOchlcG2O-3PHcz2z99q7-vFVWQsNHAcTGIMH3Ai.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Red",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 18
+    },
+    {
+      "id": 15,
+      "imageURL": "https://sun9-34.userapi.com/s/v1/if2/rwLctxqNVOdPxTaLPs7McWLIchr6taQi1_EQQgP-8KPfcRVdIcnenxSkKroY0oRjuhXyNm_AZ4wt5ELY-9ZiClA8.jpg?size=350x350&quality=96&type=album",
+      "name": "Персональный мундштук RAM-LAb Stab MT Blue",
+      "type": "mouthpieces",
+      "size": "",
+      "price": 1899,
+      "category": 0,
+      "rating": 18
+    }
+  ]
+}

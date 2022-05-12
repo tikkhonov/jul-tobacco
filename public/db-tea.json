@@ -1,0 +1,54 @@
+{
+  "tea": [
+    {
+      "id": 0,
+      "imageURL": "https://sun9-49.userapi.com/s/v1/if2/AkNHKR9WjXT79q3QZD-TcNWaT2P578ZvBuuu2-KSEGyceA4nmRgVcACWRd4cNA8ifPez_odWw001T-iFujy2wUc1.jpg?size=600x416&quality=96&type=album",
+      "name": "Иу Гунтин Шу Пу Эр, 2014 г.",
+      "type": "tea",
+      "size": "100g",
+      "price": 4599,
+      "category": 0,
+      "rating": 15
+    },
+    {
+      "id": 1,
+      "imageURL": "https://sun9-26.userapi.com/s/v1/if2/byYiK7g_Gd0uDNYi28mEtRXN7eOK3grNa1Z-0B34oFlFLAiNb01JgJpda_F25g5X_aKEMHer6J9LDQDwQ85u7JeH.jpg?size=500x500&quality=96&type=album",
+      "name": "Пу Эр Шен Бин Ча, 2016 г.",
+      "type": "tea",
+      "size": "357g",
+      "price": 7199,
+      "category": 0,
+      "rating": 7
+    },
+    {
+      "id": 2,
+      "imageURL": "https://sun9-87.userapi.com/s/v1/if2/GlcYqt_lBd6ModBS-ruS8M3RfcJInUkFrEZnt0hyaF9QA459IpK3JALAFWP019Ph1k6kbyfNMz5lUVnyip3JIgPG.jpg?size=500x500&quality=96&type=album",
+      "name": "Пу Эр Белая Почка",
+      "type": "tea",
+      "size": "500g",
+      "price": 12199,
+      "category": 0,
+      "rating": 9
+    },
+    {
+      "id": 3,
+      "imageURL": "https://sun9-30.userapi.com/s/v1/if2/EwQ2Rh8tEdAMtdZTK1mOSsjXmnobC8ihlUcvudX2fBqD84QHYq6uYrkXYxI5KysIWX582E_8pZgM1slZxit7yF78.jpg?size=500x500&quality=96&type=album",
+      "name": "Менхай Гунтин Пу Эр",
+      "type": "tea",
+      "size": "100g",
+      "price": 7199,
+      "category": 0,
+      "rating": 11
+    },
+    {
+      "id": 4,
+      "imageURL": "https://sun9-41.userapi.com/s/v1/if2/ukMdLgUttl6hm93qq4ojzmbF7bt5kiS17fd2j-mZoxsBtDu7vSWhW3dA-pOGdU2aacuUneS_fuWEK3N5xNiw2Z18.jpg?size=593x421&quality=96&type=album",
+      "name": "Менхай Лао Бань Чжан, 2005 г.",
+      "type": "tea",
+      "size": "100g",
+      "price": 6999,
+      "category": 0,
+      "rating": 13
+    }
+  ]
+}

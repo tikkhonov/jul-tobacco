@@ -8,6 +8,7 @@ import MainPage from './pages/MainPage';
 import ProductsPage from './pages/ProductsPage';
 
 function App() {
+  
   return (
     <div className="wrapper">
       <Routes>

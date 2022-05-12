@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { IProduct } from '../types/types'
 
-function Card() {
+interface CardProps {
+  product: IProduct;
+}
+
+const Card: FC<CardProps> = (
+    {product}
+  ) => {
   return (
     <div className="card">
       <div className="card-image">
-        <img src="/img/image.png" alt="tobacco"/>
+        <img src={product.imageURL} alt="tobacco"/>
         <div className="card--buttons_block">
           <div className="favorite__button">
             <svg 
@@ -55,7 +62,8 @@ function Card() {
             <div className="review__count">1313 Отзывов</div>
           </div>
           <div className="card__title">
-            <p>Северный Крепкий орешек 40g</p>
+            <p>{product.name} {product.size}</p>
+            <b>{product.price} ₽</b>
           </div>
           <div className="card__button">
             <div className="card__button_items">

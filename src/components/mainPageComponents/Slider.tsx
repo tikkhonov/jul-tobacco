@@ -3,7 +3,7 @@ import React, { Children } from 'react'
 const Slider = ({ children }: {
   children: JSX.Element | JSX.Element[]
 }) => {
-  const [sliderPages, setSliderPages] = React.useState<React.ReactNode>([])
+  const [sliderPages, setSliderPages] = React.useState<JSX.Element[]>([])
   const [offset, setOffset] = React.useState<number>(0)
 
   const SLIDER_BLOCK_WIDTH: number = 1907
@@ -21,7 +21,7 @@ const Slider = ({ children }: {
       return Math.max(newOffset, maxOffset)
     })
   }
-  
+
   React.useEffect(() => {
     setSliderPages(
       Children.map(children, child => {
