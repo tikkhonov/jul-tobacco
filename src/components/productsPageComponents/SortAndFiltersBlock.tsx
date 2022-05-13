@@ -2,10 +2,10 @@ import React from 'react'
 import FilterBlock from './FilterBlock'
 import SortBlock from './SortBlock'
 
-function SortAndFiltersBlock() {
+function SortAndFiltersBlock () {
   return (
     <div className="sort-and-filters-block">
-      <SortBlock/>
+      <SortBlock items={['популярности', 'цене min', 'цене max', 'алфавиту']}/>
       <FilterBlock/>
     </div>
   )
