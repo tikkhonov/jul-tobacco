@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
-import FilterItem from './FilterItem'
+import FilterItem from '../FilterItem'
 
 interface FilterBlockProps {
   items: [string, string, string, string]
 }
 
-const FilterBlock: FC<FilterBlockProps> = (
+const FilterBlockTobacco: FC<FilterBlockProps> = (
   { 
     items 
   }
@@ -48,4 +48,4 @@ const FilterBlock: FC<FilterBlockProps> = (
   )
 }
 
-export default FilterBlock
+export default FilterBlockTobacco

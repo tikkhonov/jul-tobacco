@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import SortAndFiltersBlock from '../components/productsPageComponents/SortAndFiltersBlock'
+import SortAndFiltersBlockTobacco from '../components/productsPageComponents/tobacco/SortAndFiltersBlockTobacco'
 import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
 import { IProduct } from '../types/types'
@@ -20,7 +20,7 @@ function ProductsPageTobacco() {
 
   async function fetchProducts() {
     try {
-      const response = await axios.get<IProduct[]>("http://localhost:3000/db.json")
+      const response = await axios.get<IProduct[]>("https://627d2f9abf2deb7174e92ac3.mockapi.io/tobaccos")
       setProducts(response.data)
     } catch (e) {
       alert(e)
@@ -56,7 +56,7 @@ function ProductsPageTobacco() {
           </div>
         </form>
         <div className="main">
-          <SortAndFiltersBlock/>
+          <SortAndFiltersBlockTobacco/>
           <CardsBlock products={filterProducts}/>
         </div>
       </div>

@@ -8,7 +8,6 @@ import CartHeader from '../components/cartPageComponents/CartHeader'
 function CartPage() {
   return (
     <div className="wrapper">
-      
       <CartEmptyLine/>
       <div className="cart">
         <CartHeader/>

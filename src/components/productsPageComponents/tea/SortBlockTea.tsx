@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
-import SortBlockItem from './SortBlockItem'
+import SortBlockItem from '../SortBlockItem'
 
 interface SortBlockProps {
   items: [string, string, string, string]
 }
 
-const SortBlock: FC<SortBlockProps> = ({ items }) => {
+const SortBlockTea: FC<SortBlockProps> = ({ items }) => {
   const [visibleSortBlock, setVisibleSortBlock] = React.useState<boolean>(false)
   const sortRef = React.useRef<HTMLDivElement>(null)
   const [activeSortItem, setActiveSortItem] = React.useState<number>(0)
@@ -19,10 +19,6 @@ const SortBlock: FC<SortBlockProps> = ({ items }) => {
   const toggleVisibleSortBlock = () => {
     setVisibleSortBlock(!visibleSortBlock)
   }
-
-  React.useEffect(() => {
-    console.log(sortRef.current);
-  }, [])
   
   return (
     <div
@@ -62,4 +58,4 @@ const SortBlock: FC<SortBlockProps> = ({ items }) => {
   )
 }
 
-export default SortBlock
+export default SortBlockTea

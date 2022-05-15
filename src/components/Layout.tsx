@@ -9,9 +9,7 @@ function Layout() {
   return (
     <>
       <Header/>
-
       <Outlet/>
-
       <WarningBlock/>
       <Footer/>
     </>
