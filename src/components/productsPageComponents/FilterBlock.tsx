@@ -1,47 +1,46 @@
-import React from 'react'
+import React, { FC } from 'react'
+import FilterItem from './FilterItem'
 
-function FilterBlock() {
+interface FilterBlockProps {
+  items: [string, string, string, string]
+}
+
+const FilterBlock: FC<FilterBlockProps> = (
+  { 
+    items 
+  }
+  ) => {
+  const [activeFilterItem, setActiveFilterItem] = React.useState<number | undefined>(undefined)
+
+  const onSelectItem = (index: number) => {
+    setActiveFilterItem(index)
+  }
   
   return (
     <div className="filter-block">
       <div className="filter--items">
         <div className="filter__item">
           <div className="filter__item-title">Табак для кальяна</div>
-          <button className="plus"> - </button>
           <div className="filter_more_items">
-            <div className="filter__more_item">
-              25g
-            </div>
-            <div className="filter__more_item">
-              30g
-            </div>
-            <div className="filter__more_item">
-              60g
-            </div>
-            <div className="filter__more_item">
-              100g
-            </div>
-          </div>
-        </div>
-        <div className="filter__item">
-          <div className="filter__item-title">Чай</div>
-          <button className="plus"> + </button>
-          <div className="filter_more_items">
-            <div className="filter__more_item">
-              Пу Эр 
-            </div>
-          </div>
-        </div>
-        <div className="filter__item filter__item-active">
-          <div className="filter__item-title">Аксессуары</div>
-          <button className="minus"> - </button>
-          <div className="filter_more_items">
-            <div className="filter__more_item">
-              Мундштуки
-            </div>
-            <div className="filter__more_item">
-              Щепцы
-            </div>
+            {
+              items &&
+              items.map((name, index) => {
+                <FilterItem
+                  key={`${name}_${index}`}
+                  name={name}
+                  index={index}
+                  onSelectItem={onSelectItem}
+                  activeFilterItem={activeFilterItem}
+                />
+               return <FilterItem
+                key={`${name}_${index}`}
+                name={name}
+                index={index}
+                onSelectItem={onSelectItem}
+                activeFilterItem={activeFilterItem}
+              />
+              })
+            }
           </div>
         </div>
       </div>

@@ -86,9 +86,10 @@
       display: grid;
       grid-template-columns: 274px;
       gap: 13px 0;
+      background-color: #404040;
+      border-radius: 8px;
 
       .filter__item {
-        background-color: #454545;
         font-size: 20px;
         font-weight: 400;
         border-radius: 8px;
@@ -117,12 +118,7 @@
 
         .filter__item-title {
           margin: 13px 0;
-          cursor: pointer;
           transition: .3s;
-        }
-        
-        .filter__item-active {
-          color: #4ECC21;
         }
 
         .filter__more_item {
@@ -138,6 +134,15 @@
 
           &:hover {
             background-color: #CDCDCD;
+          }
+        }
+
+        .filter-active-item {
+          background-color: #999999;
+
+          &:hover {
+            background-color: #808080;
+            color: #EFEFEF;
           }
         }
         

@@ -9,6 +9,7 @@ const SortBlock: FC<SortBlockProps> = ({ items }) => {
   const [visibleSortBlock, setVisibleSortBlock] = React.useState<boolean>(false)
   const sortRef = React.useRef<HTMLDivElement>(null)
   const [activeSortItem, setActiveSortItem] = React.useState<number>(0)
+  
   const activeLabel = items[activeSortItem]
   
   const onSelectItem = (index: number) => {
@@ -19,11 +20,9 @@ const SortBlock: FC<SortBlockProps> = ({ items }) => {
     setVisibleSortBlock(!visibleSortBlock)
   }
 
-
   React.useEffect(() => {
     console.log(sortRef.current);
   }, [])
-  
   
   return (
     <div

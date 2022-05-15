@@ -6,7 +6,7 @@ import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
 import { IProduct } from '../types/types'
 
-function ProductsPage() {
+function ProductsPageTobacco() {
   const [products, setProducts] = React.useState<IProduct[]>([])
   const [value, setValue] = React.useState('')
 
@@ -64,4 +64,4 @@ function ProductsPage() {
   )
 }
 
-export default ProductsPage
+export default ProductsPageTobacco
