@@ -20,7 +20,7 @@ const FilterBlockTea: FC<FilterBlockProps> = (
     <div className="filter-block">
       <div className="filter--items">
         <div className="filter__item">
-          <div className="filter__item-title">Табак для кальяна</div>
+          <div className="filter__item-title">Чай</div>
           <div className="filter_more_items">
             {
               items &&

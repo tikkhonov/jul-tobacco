@@ -1,10 +1,10 @@
 import React from 'react'
 import axios from 'axios'
 
-import SortAndFiltersBlock from '../components/productsPageComponents/tobacco/SortAndFiltersBlockTobacco'
 import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
 import { IProduct } from '../types/types'
+import SortAndFiltersBlockAccessories from '../components/productsPageComponents/accessories/SortAndFiltersBlockAccessories'
 
 function ProductsPageAccessories() {
   const [products, setProducts] = React.useState<IProduct[]>([])
@@ -56,7 +56,7 @@ function ProductsPageAccessories() {
           </div>
         </form>
         <div className="main">
-          <SortAndFiltersBlock/>
+          <SortAndFiltersBlockAccessories/>
           <CardsBlock products={filterProducts}/>
         </div>
       </div>
