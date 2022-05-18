@@ -5,10 +5,8 @@ import SortBlockTobacco from './SortBlockTobacco'
 function SortAndFiltersBlockTobacco () {
   return (
     <div className="sort-and-filters-block">
-      <SortBlockTobacco items={['популярности', 'цене min', 'цене max', 'алфавиту']}/>
-      <FilterBlockTobacco 
-        items={['25g', '30g', '60g', '100g']}
-      />
+      <SortBlockTobacco items={['популярности', 'цене min', 'цене max', 'алфавиту']} />
+      <FilterBlockTobacco items={['25g', '30g', '60g', '100g']} />
     </div>
   )
 }

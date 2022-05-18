@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import FilterItem from '../FilterItem'
 
 interface FilterBlockProps {
-  items: [string, string, string, string]
+  items: [string, string, string, string] 
 }
 
 const FilterBlockTobacco: FC<FilterBlockProps> = (

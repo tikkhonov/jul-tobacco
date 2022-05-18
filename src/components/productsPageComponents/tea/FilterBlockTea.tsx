@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import FilterItem from '../FilterItem'
 
 interface FilterBlockProps {
-  items: [string]
+  items: [string] 
 }
 
 const FilterBlockTea: FC<FilterBlockProps> = (

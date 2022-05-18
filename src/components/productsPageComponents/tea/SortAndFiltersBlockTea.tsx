@@ -5,10 +5,14 @@ import SortBlockTea from './SortBlockTea'
 function SortAndFiltersBlockTea () {
   return (
     <div className="sort-and-filters-block">
-      <SortBlockTea items={['популярности', 'цене min', 'цене max', 'алфавиту']}/>
-      <FilterBlockTea 
-        items={['Пу Эр']}
-      />
+      <SortBlockTea 
+        items={[
+          {name: 'популярности', type: 'popular'}, 
+          {name: 'цене min', type: 'priceMin'}, 
+          {name: 'цене max', type: 'priceMax'}, 
+          {name: 'алфавиту', type: 'alphabet'}
+        ]}/>
+      <FilterBlockTea items={['Пу Эр']} />
     </div>
   )
 }
