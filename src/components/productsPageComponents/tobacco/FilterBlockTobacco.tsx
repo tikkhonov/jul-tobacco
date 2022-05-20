@@ -2,11 +2,13 @@ import React, { FC } from 'react'
 import FilterItem from '../FilterItem'
 
 interface FilterBlockProps {
-  items: [string, string, string, string] 
+  items: string[], 
+  onClickItem: (index: any) => any
 }
 
 const FilterBlockTobacco: FC<FilterBlockProps> = (
   { 
+    onClickItem,
     items 
   }
   ) => {
@@ -14,6 +16,7 @@ const FilterBlockTobacco: FC<FilterBlockProps> = (
 
   const onSelectItem = (index: number) => {
     setActiveFilterItem(index)
+    onClickItem(index)
   }
   
   return (

@@ -4,6 +4,8 @@ import { filterAndSortReducer } from './filters'
 import { productsReducer } from './products'
 
 export const rootReducer = combineReducers({
-  filterAndSortReducer,
-  productsReducer
+  filterAndSort: filterAndSortReducer,
+  products: productsReducer
 })
+
+export type RootState = ReturnType<typeof rootReducer>

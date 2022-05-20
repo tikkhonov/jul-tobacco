@@ -1,31 +1,33 @@
 import React from 'react'
-import axios from 'axios'
 
-import SortAndFiltersBlockTea from '../components/productsPageComponents/tea/SortAndFiltersBlockTea'
 import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
-import { IProduct } from '../types/types'
+import SortAndFiltersBlockTea from '../components/productsPageComponents/tea/SortAndFiltersBlockTea'
+
+import { useTypedSelector } from '../hooks/useTypedSelector'
+import { useActions } from '../hooks/useActions'
 
 function ProductsPageTea() {
-  const [products, setProducts] = React.useState<IProduct[]>([])
   const [value, setValue] = React.useState('')
 
+  const { isLoading, error, items } = useTypedSelector(state => state.products)
+  const { fetchProducts } = useActions()
+  
   React.useEffect(() => {
-    fetchProducts()
+    fetchProducts('tea')
   }, [])
   
-  const filterProducts = products.filter(prod => {
-    return prod.name.toLowerCase().includes(value.toLowerCase())
-  })
-
-  async function fetchProducts() {
-    try {
-      const response = await axios.get<IProduct[]>("https://627d2f9abf2deb7174e92ac3.mockapi.io/tea")
-      setProducts(response.data)
-    } catch (e) {
-      alert(e)
-    }
+  if (isLoading) {
+    return <h1>Идет загрузка ...</h1>
   }
+  if (error) {
+    return <h1>{error}</h1>
+  }
+  
+  const filterProducts = items.filter(item => {
+    return item.name.toLowerCase().includes(value.toLowerCase())
+  })
+  
   
   return (
     <div className="wrapper">
@@ -57,7 +59,7 @@ function ProductsPageTea() {
         </form>
         <div className="main">
           <SortAndFiltersBlockTea/>
-          <CardsBlock products={filterProducts}/>
+          <CardsBlock products={filterProducts} />
         </div>
       </div>
     </div>

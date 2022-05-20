@@ -1,19 +1,20 @@
 import React, { FC } from 'react'
 import SortBlockItem from '../SortBlockItem'
-
 interface SortBlockProps {
-  items: [string, string, string, string]
+  items: {name: string, type: string}[],
+  onClickItem: (index: any) => any,
 }
 
-const SortBlockTobacco: FC<SortBlockProps> = ({ items }) => {
+const SortBlockTobacco: FC<SortBlockProps> = ({ items, onClickItem }) => {
   const [visibleSortBlock, setVisibleSortBlock] = React.useState<boolean>(false)
   const sortRef = React.useRef<HTMLDivElement>(null)
   const [activeSortItem, setActiveSortItem] = React.useState<number>(0)
   
-  const activeLabel = items[activeSortItem]
+  const activeLabel = items[activeSortItem].name
   
   const onSelectItem = (index: number) => {
     setActiveSortItem(index)
+    onClickItem(index)
   }
   
   const toggleVisibleSortBlock = () => {
@@ -35,17 +36,17 @@ const SortBlockTobacco: FC<SortBlockProps> = ({ items }) => {
         <div className="sort--items">
           {
             items &&
-            items.map((name, index) => {
+            items.map((item, index) => {
               <SortBlockItem 
-                key={`${name}_${index}`}
-                name={name} 
+                key={`${item}_${index}`}
+                name={item.name} 
                 index={index}
                 onSelectItem={onSelectItem}
                 activeSortItem={activeSortItem}
               />
               return <SortBlockItem
-                key={`${name}_${index}`}
-                name={name} 
+                key={`${item}_${index}`}
+                name={item.name} 
                 index={index}
                 onSelectItem={onSelectItem}
                 activeSortItem={activeSortItem}
