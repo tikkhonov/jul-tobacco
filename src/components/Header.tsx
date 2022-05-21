@@ -14,7 +14,7 @@ function Header() {
       <div className="header-logo">
         <Link to="/">
           <img 
-            src="./img/logo.webp" 
+            src="https://cdn.shopify.com/s/files/1/0271/7209/files/dwc-logo.png?v=1624458280" 
             alt="logo"  
             width={150}
             height={150}

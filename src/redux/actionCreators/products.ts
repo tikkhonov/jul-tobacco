@@ -16,7 +16,7 @@ export const fetchProducts = (address: string) => {
     } catch (e) {
       dispatch({
         type: ProductActionTypes.FETCH_PRODUCTS_ERROR, 
-        payload: 'Произошла ошибка при загрузке продуктов :('
+        payload: 'Произошла ошибка при загрузке товаров :('
       })
     }
   }
