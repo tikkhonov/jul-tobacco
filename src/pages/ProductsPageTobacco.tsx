@@ -7,15 +7,18 @@ import CardsBlock from '../components/productsPageComponents/CardsBlock'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 import { useActions } from '../hooks/useActions'
 
-function ProductsPageTobacco() {
+function ProductsPageTobacco () {
   const [value, setValue] = React.useState('')
 
   const { isLoading, error, items } = useTypedSelector(state => state.products)
+  const { filterBy } = useTypedSelector(filters => filters.filter)
+  const { sortBy } = useTypedSelector(sort => sort.sort)
+  
   const { fetchProducts } = useActions()
   
   React.useEffect(() => {
-    fetchProducts('tobacco')
-  }, [])
+      fetchProducts('tobacco', sortBy, filterBy);
+  }, [sortBy, filterBy])
   
   if (isLoading) {
     return <h1>Идет загрузка ...</h1>
@@ -58,7 +61,7 @@ function ProductsPageTobacco() {
           </div>
         </form>
         <div className="main">
-          <SortAndFiltersBlockTobacco/>
+          <SortAndFiltersBlockTobacco sortBy={sortBy} filterBy={filterBy}/>
           <CardsBlock products={filterProducts}/>
         </div>
       </div>

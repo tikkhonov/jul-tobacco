@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import SortBlockItem from '../SortBlockItem'
+import SortBlockItemAccessories from './SortBlockItemAccessories'
 
 interface SortBlockProps {
   items: [string, string, string, string]
@@ -36,14 +36,16 @@ const SortBlockAccessories: FC<SortBlockProps> = ({ items }) => {
           {
             items &&
             items.map((name, index) => {
-              <SortBlockItem 
+              <SortBlockItemAccessories
+                items={items}
                 key={`${name}_${index}`}
                 name={name} 
                 index={index}
                 onSelectItem={onSelectItem}
                 activeSortItem={activeSortItem}
               />
-              return <SortBlockItem
+              return <SortBlockItemAccessories
+                items={items}
                 key={`${name}_${index}`}
                 name={name} 
                 index={index}

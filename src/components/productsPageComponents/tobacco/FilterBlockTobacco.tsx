@@ -1,22 +1,15 @@
 import React, { FC } from 'react'
-import FilterItem from '../FilterItem'
 
 interface FilterBlockProps {
   items: string[], 
-  onClickItem: (index: any) => any
+  onClickFilterItem: (index: any) => any;
+  activeFilterItem: any;
 }
 
-const FilterBlockTobacco: FC<FilterBlockProps> = (
-  { 
-    onClickItem,
-    items 
-  }
-  ) => {
-  const [activeFilterItem, setActiveFilterItem] = React.useState<number | undefined>(undefined)
-
+const FilterBlockTobacco: FC<FilterBlockProps> = ({ onClickFilterItem, items, activeFilterItem}) => {
+  // const [activeFilterItem, setActiveFilterItem] = React.useState<number | undefined>(undefined)
   const onSelectItem = (index: number) => {
-    setActiveFilterItem(index)
-    onClickItem(index)
+    onClickFilterItem(index)
   }
   
   return (
@@ -28,20 +21,21 @@ const FilterBlockTobacco: FC<FilterBlockProps> = (
             {
               items &&
               items.map((name, index) => {
-                <FilterItem
+                return <div 
                   key={`${name}_${index}`}
-                  name={name}
-                  index={index}
-                  onSelectItem={onSelectItem}
-                  activeFilterItem={activeFilterItem}
-                />
-               return <FilterItem
-                key={`${name}_${index}`}
-                name={name}
-                index={index}
-                onSelectItem={onSelectItem}
-                activeFilterItem={activeFilterItem}
-              />
+                  className="filter_more_items"
+                >
+                  <div
+                    onClick={() => onSelectItem(index)} 
+                    className={
+                      activeFilterItem === index 
+                      ? "filter__more_item filter-active-item" 
+                      : "filter__more_item ''"
+                    }
+                  >
+                    <span>{name}</span>
+                  </div>
+                </div>
               })
             }
           </div>

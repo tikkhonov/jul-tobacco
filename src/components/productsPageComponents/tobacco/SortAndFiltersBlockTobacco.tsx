@@ -1,41 +1,45 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import FilterBlockTobacco from './FilterBlockTobacco'
 import SortBlockTobacco from './SortBlockTobacco'
 
-import { setFilterBy, setSortBy } from '../../../redux/actionCreators/filters'
+import { useFilterActions } from '../../../hooks/useActions';
 
-const SortItems = [
-  {name: 'популярности', type: 'popular'}, 
-  {name: 'цене min', type: 'priceMin'}, 
-  {name: 'цене max', type: 'priceMax'}, 
-  {name: 'алфавиту', type: 'alphabet'}
+interface SortAndFilters {
+  sortBy: any;
+  filterBy: any;
+}
+
+const sortItems = [
+  {name: 'популярности', type: 'popular', order: 'desc'}, 
+  {name: 'цене', type: 'price', order: 'desc'}, 
+  {name: 'алфавиту', type: 'name', order: 'asc'}
 ]
-const FilterItems = ['25g', '30g', '60g', '100g']
+const filterItems = ['Фрукты', 'Выпечка', 'Ягоды', 'Разное', 'Травы']
 
-function SortAndFiltersBlockTobacco () {
-
-  const onClickSortItem = React.useCallback((index: number) => {
-    setSortBy(index)
-    console.log(index);
-    
+const SortAndFiltersBlockTobacco: FC<SortAndFilters> = ({ sortBy, filterBy}) => {
+  const { setSortBy } = useFilterActions()
+  const { setFilterBy } = useFilterActions() 
+  
+  const activeSortItem = React.useCallback((item: any) => {
+    setSortBy(item)
   }, [])
 
-  const onClickFilterItem = React.useCallback((filtIndex: number) => {
+  const activeFilterItem = React.useCallback((filtIndex: string) => {
     setFilterBy(filtIndex)
-    console.log(filtIndex);
-    
   }, [])
   
   return (
     <div className="sort-and-filters-block">
       <SortBlockTobacco 
-        onClickItem={onClickSortItem}
-        items={SortItems} 
+        onClickSortItem={activeSortItem}
+        items={sortItems} 
+        activeSortItem={sortBy.type}
       />
       <FilterBlockTobacco 
-        onClickItem={onClickFilterItem}
-        items={FilterItems} 
+        onClickFilterItem={activeFilterItem}
+        items={filterItems}
+        activeFilterItem={filterBy}
       />
     </div>
   )

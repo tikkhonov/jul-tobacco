@@ -43,22 +43,29 @@ export type ProductAction = FetchProductAction | FetchProductSuccessAction | Fet
 
 export interface FilterAndSortState {
   filterBy?: undefined | string;
-  sortBy?: string;
+  sortBy?: {
+    type: string;
+    order: string;
+  };
 }
 
 export enum FilterAndSortActionTypes {
   SET_SORT_BY = "SET_SORT_BY",
-  SET_FILTER_BY = "SET_FILTER_BY"
+  SET_FILTER_BY = "SET_FILTER_BY",
 }
 
 interface SortAction {
   type: FilterAndSortActionTypes.SET_SORT_BY;
-  payload: any;
+  payload: {
+    type: string,
+    order: string,
+  };
 }
 
 interface FilterAction {
   type: FilterAndSortActionTypes.SET_FILTER_BY;
-  payload: any;
+  payload: string;
 }
 
-export type FilterAndSortAction = SortAction | FilterAction
+export type SetSortAction = SortAction
+export type SetFilterAction = FilterAction

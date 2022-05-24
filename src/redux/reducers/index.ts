@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
 
-import { filterAndSortReducer } from './filters'
+import { filterReducer, sortReducer } from './filters'
 import { productsReducer } from './products'
 
 export const rootReducer = combineReducers({
-  filterAndSort: filterAndSortReducer,
-  products: productsReducer
+  filter: filterReducer,
+  sort: sortReducer,
+  products: productsReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
