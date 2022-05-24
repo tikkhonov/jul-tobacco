@@ -1,40 +1,40 @@
 import React, { FC } from 'react'
-import FilterItem from '../FilterItem'
 
 interface FilterBlockProps {
-  items: [string, string]
+  items: string[], 
+  onClickFilterItem: (index: any) => any;
+  activeFilterItem: any;
 }
 
-const FilterBlockAccessories: FC<FilterBlockProps> = ({items}) => {
-  const [activeFilterItem, setActiveFilterItem] = React.useState<number | undefined>(undefined)
-
+const FilterBlockAccessories: FC<FilterBlockProps> = ({ onClickFilterItem, items, activeFilterItem}) => {
   const onSelectItem = (index: number) => {
-    setActiveFilterItem(index)
+    onClickFilterItem(index)
   }
   
   return (
     <div className="filter-block">
       <div className="filter--items">
         <div className="filter__item">
-          <div className="filter__item-title">Аксессуары</div>
+          <div className="filter__item-title">Табак для кальяна</div>
           <div className="filter_more_items">
             {
               items &&
               items.map((name, index) => {
-                <FilterItem
+                return <div 
                   key={`${name}_${index}`}
-                  name={name}
-                  index={index}
-                  onSelectItem={onSelectItem}
-                  activeFilterItem={activeFilterItem}
-                />
-               return <FilterItem
-                key={`${name}_${index}`}
-                name={name}
-                index={index}
-                onSelectItem={onSelectItem}
-                activeFilterItem={activeFilterItem}
-              />
+                  className="filter_more_items"
+                >
+                  <div
+                    onClick={() => onSelectItem(index)} 
+                    className={
+                      activeFilterItem === index 
+                      ? "filter__more_item filter-active-item" 
+                      : "filter__more_item ''"
+                    }
+                  >
+                    <span>{name}</span>
+                  </div>
+                </div>
               })
             }
           </div>

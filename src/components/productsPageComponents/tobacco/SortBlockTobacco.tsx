@@ -8,7 +8,6 @@ interface SortBlockProps {
 const SortBlockTobacco: FC<SortBlockProps> = ({ items, onClickSortItem, activeSortItem }) => {
   const [visibleSortBlock, setVisibleSortBlock] = React.useState<boolean>(false)
   const sortRef = React.useRef<HTMLDivElement>(null)
-  // const [activeSortItem, setActiveSortItem] = React.useState<number>(0)
   
   const activeLabel: any = items.find(obj => obj.type === activeSortItem)?.name
   
@@ -61,22 +60,3 @@ const SortBlockTobacco: FC<SortBlockProps> = ({ items, onClickSortItem, activeSo
 }
 
 export default SortBlockTobacco
-
-
-              // <SortBlockItemTobacco 
-              //   key={`${item}_${index}`}
-              //   name={item.name} 
-              //   index={index}
-              //   onSelectItem={onSelectItem}
-              //   activeSortItem={activeSortItem}
-              //   items={items}
-              //   type={item.type}
-              // />
-              // return <SortBlockItemTobacco
-              //   key={`${item}_${index}`}
-              //   name={item.name} 
-              //   index={index}
-              //   onSelectItem={onSelectItem}
-              //   activeSortItem={activeSortItem}
-              //   items={items}
-              //   type={item.type}

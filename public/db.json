@@ -959,7 +959,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 18
     },
     {
@@ -969,7 +969,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 18
     },
     {
@@ -979,7 +979,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 18
     },
     {
@@ -989,7 +989,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 18
     },
     {
@@ -999,7 +999,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 1313
     },
     {
@@ -1009,7 +1009,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 18
     },
     {
@@ -1019,7 +1019,7 @@
       "type": "mouthpieces",
       "size": "",
       "price": 1899,
-      "category": 0,
+      "category": 1,
       "rating": 18
     }
   ],
@@ -1031,7 +1031,7 @@
       "type": "tea",
       "size": "100g",
       "price": 4599,
-      "category": 0,
+      "category": 1,
       "rating": 15
     },
     {
@@ -1051,7 +1051,7 @@
       "type": "tea",
       "size": "500g",
       "price": 12199,
-      "category": 0,
+      "category": 1,
       "rating": 9
     },
     {
@@ -1061,7 +1061,7 @@
       "type": "tea",
       "size": "100g",
       "price": 7199,
-      "category": 0,
+      "category": 1,
       "rating": 11
     },
     {

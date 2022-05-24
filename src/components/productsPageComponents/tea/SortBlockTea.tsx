@@ -1,36 +1,18 @@
 import React, { FC } from 'react'
-
-import SortBlockItemTea from './SortBlockItemTea';
 interface SortBlockProps {
-  items: [
-    {
-      name: string;
-      type: string;
-    },
-    {
-      name: string;
-      type: string;
-    },
-    {
-      name: string;
-      type: string;
-    },
-    {
-      name: string;
-      type: string;
-    }
-  ],
+  items: {name: string, type: string, order: string}[],
+  onClickSortItem: (index: any) => any,
+  activeSortItem: string;
 }
 
-const SortBlockTea: FC<SortBlockProps> = ({ items }) => {
+const SortBlockTea: FC<SortBlockProps> = ({ items, onClickSortItem, activeSortItem }) => {
   const [visibleSortBlock, setVisibleSortBlock] = React.useState<boolean>(false)
   const sortRef = React.useRef<HTMLDivElement>(null)
-  const [activeSortItem, setActiveSortItem] = React.useState<number>(0)
   
-  const activeLabel = items[activeSortItem].name
+  const activeLabel: any = items.find(obj => obj.type === activeSortItem)?.name
   
-  const onSelectItem = (index: number) => {
-    setActiveSortItem(index)
+  const onSelectItem = (item: {name: string, type: string, order: string}) => {
+    onClickSortItem(item)
   }
   
   const toggleVisibleSortBlock = () => {
@@ -52,23 +34,23 @@ const SortBlockTea: FC<SortBlockProps> = ({ items }) => {
         <div className="sort--items">
           {
             items &&
-            items.map((obj, index) => {
-              <SortBlockItemTea
-                items={items}
-                key={`${obj.type}_${index}`}
-                name={obj.name} 
-                index={index}
-                onSelectItem={onSelectItem}
-                activeSortItem={activeSortItem}
-              />
-              return <SortBlockItemTea
-                items={items}
-                key={`${obj.type}_${index}`}
-                name={obj.name} 
-                index={index}
-                onSelectItem={onSelectItem}
-                activeSortItem={activeSortItem}
-              />
+            items.map((item: {name: string, type: string, order: string}, index: number) => {
+              return (
+                <div
+                  key={`${item.name}_${index}`}
+                >
+                  <div
+                    onClick={() => onSelectItem(item)} 
+                    className={activeSortItem === item.type ? "sort__item sort__item-active" : "sort__item ''"}
+                  >
+                    {item.name}
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="16" cy="16" r="16" fill="#6BFF37"/>
+                      <path d="M7 17.5L12.5 23L25.5 10" stroke="#EFEFEF" strokeWidth="5"/>
+                    </svg>
+                  </div>
+                </div>
+              )
             })
           }
         </div>

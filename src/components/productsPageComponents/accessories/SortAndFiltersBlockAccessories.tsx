@@ -1,13 +1,45 @@
-import React from 'react'
+import React, { FC } from 'react'
+
 import FilterBlockAccessories from './FilterBlockAccessories'
 import SortBlockAccessories from './SortBlockAccessories'
 
-function SortAndFiltersBlockAccessories () {
+import { useFilterActions } from '../../../hooks/useActions';
+
+interface SortAndFilters {
+  sortBy: any;
+  filterBy: any;
+}
+
+const sortItems = [
+  {name: 'популярности', type: 'popular', order: 'desc'}, 
+  {name: 'цене', type: 'price', order: 'desc'}, 
+  {name: 'алфавиту', type: 'name', order: 'asc'}
+]
+const filterItems = ['Щепцы', 'Мундштуки']
+
+const SortAndFiltersBlockAccessories: FC<SortAndFilters> = ({ sortBy, filterBy}) => {
+  const { setSortBy } = useFilterActions()
+  const { setFilterBy } = useFilterActions() 
+  
+  const activeSortItem = React.useCallback((item: any) => {
+    setSortBy(item)
+  }, [])
+
+  const activeFilterItem = React.useCallback((filtIndex: string) => {
+    setFilterBy(filtIndex)
+  }, [])
+  
   return (
     <div className="sort-and-filters-block">
-      <SortBlockAccessories items={['популярности', 'цене min', 'цене max', 'алфавиту']}/>
+      <SortBlockAccessories 
+        onClickSortItem={activeSortItem}
+        items={sortItems} 
+        activeSortItem={sortBy.type}
+      />
       <FilterBlockAccessories 
-        items={['Мундштуки', 'Щепцы']}
+        onClickFilterItem={activeFilterItem}
+        items={filterItems}
+        activeFilterItem={filterBy}
       />
     </div>
   )

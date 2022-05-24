@@ -7,7 +7,6 @@ interface FilterBlockProps {
 }
 
 const FilterBlockTobacco: FC<FilterBlockProps> = ({ onClickFilterItem, items, activeFilterItem}) => {
-  // const [activeFilterItem, setActiveFilterItem] = React.useState<number | undefined>(undefined)
   const onSelectItem = (index: number) => {
     onClickFilterItem(index)
   }

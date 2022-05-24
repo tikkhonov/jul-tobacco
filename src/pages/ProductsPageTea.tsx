@@ -7,15 +7,18 @@ import SortAndFiltersBlockTea from '../components/productsPageComponents/tea/Sor
 import { useTypedSelector } from '../hooks/useTypedSelector'
 import { useActions } from '../hooks/useActions'
 
-function ProductsPageTea() {
+function ProductsPageTea () {
   const [value, setValue] = React.useState('')
 
   const { isLoading, error, items } = useTypedSelector(state => state.products)
+  const { filterBy } = useTypedSelector(filters => filters.filter)
+  const { sortBy } = useTypedSelector(sort => sort.sort)
+  
   const { fetchProducts } = useActions()
   
   React.useEffect(() => {
-    fetchProducts('tea')
-  }, [])
+      fetchProducts('Tea', sortBy, filterBy);
+  }, [sortBy, filterBy])
   
   if (isLoading) {
     return <h1>Идет загрузка ...</h1>
@@ -58,8 +61,8 @@ function ProductsPageTea() {
           </div>
         </form>
         <div className="main">
-          <SortAndFiltersBlockTea/>
-          <CardsBlock products={filterProducts} />
+          <SortAndFiltersBlockTea sortBy={sortBy} filterBy={filterBy}/>
+          <CardsBlock products={filterProducts}/>
         </div>
       </div>
     </div>

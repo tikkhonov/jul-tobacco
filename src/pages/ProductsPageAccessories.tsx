@@ -1,21 +1,25 @@
 import React from 'react'
 
+
+import SortAndFiltersBlockAccessories from '../components/productsPageComponents/accessories/SortAndFiltersBlockAccessories'
 import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
 
 import { useTypedSelector } from '../hooks/useTypedSelector'
 import { useActions } from '../hooks/useActions'
-import SortAndFiltersBlockAccessories from '../components/productsPageComponents/accessories/SortAndFiltersBlockAccessories'
 
-function ProductsPageAccessories() {
+function ProductsPageAccessories () {
   const [value, setValue] = React.useState('')
 
   const { isLoading, error, items } = useTypedSelector(state => state.products)
+  const { filterBy } = useTypedSelector(filters => filters.filter)
+  const { sortBy } = useTypedSelector(sort => sort.sort)
+  
   const { fetchProducts } = useActions()
   
   React.useEffect(() => {
-    fetchProducts('accessories')
-  }, [])
+      fetchProducts('Accessories', sortBy, filterBy);
+  }, [sortBy, filterBy])
   
   if (isLoading) {
     return <h1>Идет загрузка ...</h1>
@@ -58,8 +62,8 @@ function ProductsPageAccessories() {
           </div>
         </form>
         <div className="main">
-          <SortAndFiltersBlockAccessories/>
-          <CardsBlock products={filterProducts} />
+          <SortAndFiltersBlockAccessories sortBy={sortBy} filterBy={filterBy}/>
+          <CardsBlock products={filterProducts}/>
         </div>
       </div>
     </div>
