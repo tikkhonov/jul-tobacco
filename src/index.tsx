@@ -21,7 +21,6 @@ root.render(
           element={
             <App />
           }>
-          <Route path="cart" />
         </Route>
       </Routes>
     </BrowserRouter>

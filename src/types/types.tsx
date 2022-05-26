@@ -9,13 +9,12 @@ export interface IProduct {
   rating: number;
 }
 
+// productReducer
 export interface ProductState {
   items: any[],
   isLoading: boolean,
   error: null | string 
 }
-
-// ProductReducer
 
 export enum ProductActionTypes {
   FETCH_PRODUCTS = 'FETCH_PRODUCTS',
@@ -39,7 +38,7 @@ interface FetchProductErrorAction {
 
 export type ProductAction = FetchProductAction | FetchProductSuccessAction | FetchProductErrorAction
 
-// Sort and Filter Reducer
+// sortReducer & filterReducer
 
 export interface FilterAndSortState {
   filterBy?: undefined | string;
@@ -69,3 +68,40 @@ interface FilterAction {
 
 export type SetSortAction = SortAction
 export type SetFilterAction = FilterAction
+
+// cartReducer
+
+export interface CartState {
+  items: any;
+  totalPrice: number;
+  itemsCount: number;
+}
+
+export enum CartActionTypes {
+  SET_TOTAL_PRICE = "SET_TOTAL_PRICE",
+  SET_ITEMS_COUNT = "SET_ITEMS_COUNT",
+  SET_ADD_PRODUCTS_IN_CART = "SET_ADD_PRODUCTS_IN_CART",
+}
+
+interface CartTotalPriceAction {
+  type: CartActionTypes.SET_TOTAL_PRICE;
+  payload: {
+    totalPrice: number,
+  }
+}
+
+interface AddProductsInCart {
+  type: CartActionTypes.SET_ADD_PRODUCTS_IN_CART;
+  payload: {
+    items: any,
+  }
+}
+
+interface CartItemsCountAction {
+  type: CartActionTypes.SET_ITEMS_COUNT;
+  payload: {
+    itemsCount: number,
+  }
+}
+
+export type SetCartAction = CartItemsCountAction | CartTotalPriceAction | AddProductsInCart

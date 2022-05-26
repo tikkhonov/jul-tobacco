@@ -10,8 +10,7 @@ import ProductsPageAccessories from './pages/ProductsPageAccessories';
 import ProductsPageTea from './pages/ProductsPageTea';
 import ProductsPageTobacco from './pages/ProductsPageTobacco';
 
-function App() {
-  
+function App () {
   return (
     <div className="wrapper">
       <Routes>

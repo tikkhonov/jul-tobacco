@@ -5,8 +5,15 @@ import Categories from '../components/mainPageComponents/Categories';
 import MainInfo from '../components/mainPageComponents/MainInfo';
 import Slider from '../components/mainPageComponents/Slider';
 import EmptyLine from '../components/mainPageComponents/EmptyLine';
+import { useCartActions } from '../hooks/useActions';
 
 function MainPage () {
+  const { setAddProductToCart } = useCartActions()
+  
+  const AddProdunctToCart = React.useCallback((obj: any) => {
+    setAddProductToCart(obj)
+  }, [])
+  
   return (
     <div className="MainPage">
       <Slider>
@@ -114,7 +121,7 @@ function MainPage () {
       <EmptyLine/>
       <Categories/>
       <EmptyLine/>
-      <CardsBlock4x/>
+      <CardsBlock4x onClickAddProduct={AddProdunctToCart}/>
       <EmptyLine/>
       <MainInfo/>
     </div>

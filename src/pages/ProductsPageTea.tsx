@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 
 import Mark from '../components/Mark'
@@ -5,7 +6,7 @@ import CardsBlock from '../components/productsPageComponents/CardsBlock'
 import SortAndFiltersBlockTea from '../components/productsPageComponents/tea/SortAndFiltersBlockTea'
 
 import { useTypedSelector } from '../hooks/useTypedSelector'
-import { useActions } from '../hooks/useActions'
+import { useActions, useCartActions } from '../hooks/useActions'
 
 function ProductsPageTea () {
   const [value, setValue] = React.useState('')
@@ -15,6 +16,11 @@ function ProductsPageTea () {
   const { sortBy } = useTypedSelector(sort => sort.sort)
   
   const { fetchProducts } = useActions()
+  const { setAddProductToCart } = useCartActions()
+  
+  const AddProdunctToCart = React.useCallback((obj: any) => {
+    setAddProductToCart(obj)
+  }, [])
   
   React.useEffect(() => {
       fetchProducts('Tea', sortBy, filterBy);
@@ -30,7 +36,6 @@ function ProductsPageTea () {
   const filterProducts = items.filter(item => {
     return item.name.toLowerCase().includes(value.toLowerCase())
   })
-  
   
   return (
     <div className="wrapper">
@@ -62,7 +67,7 @@ function ProductsPageTea () {
         </form>
         <div className="main">
           <SortAndFiltersBlockTea sortBy={sortBy} filterBy={filterBy}/>
-          <CardsBlock products={filterProducts}/>
+          <CardsBlock products={filterProducts} onClickAddProduct={AddProdunctToCart}/>
         </div>
       </div>
     </div>

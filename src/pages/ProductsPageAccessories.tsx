@@ -1,12 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-
 
 import SortAndFiltersBlockAccessories from '../components/productsPageComponents/accessories/SortAndFiltersBlockAccessories'
 import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
 
 import { useTypedSelector } from '../hooks/useTypedSelector'
-import { useActions } from '../hooks/useActions'
+import { useActions, useCartActions } from '../hooks/useActions'
 
 function ProductsPageAccessories () {
   const [value, setValue] = React.useState('')
@@ -16,7 +16,12 @@ function ProductsPageAccessories () {
   const { sortBy } = useTypedSelector(sort => sort.sort)
   
   const { fetchProducts } = useActions()
+  const { setAddProductToCart } = useCartActions()
   
+  const AddProdunctToCart = React.useCallback((obj: any) => {
+    setAddProductToCart(obj)
+  }, [])
+
   React.useEffect(() => {
       fetchProducts('Accessories', sortBy, filterBy);
   }, [sortBy, filterBy])
@@ -31,7 +36,6 @@ function ProductsPageAccessories () {
   const filterProducts = items.filter(item => {
     return item.name.toLowerCase().includes(value.toLowerCase())
   })
-  
   
   return (
     <div className="wrapper">
@@ -63,7 +67,7 @@ function ProductsPageAccessories () {
         </form>
         <div className="main">
           <SortAndFiltersBlockAccessories sortBy={sortBy} filterBy={filterBy}/>
-          <CardsBlock products={filterProducts}/>
+          <CardsBlock products={filterProducts} onClickAddProduct={AddProdunctToCart}/>
         </div>
       </div>
     </div>

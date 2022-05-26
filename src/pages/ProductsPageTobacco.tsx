@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 
 import SortAndFiltersBlockTobacco from '../components/productsPageComponents/tobacco/SortAndFiltersBlockTobacco'
@@ -5,7 +6,8 @@ import Mark from '../components/Mark'
 import CardsBlock from '../components/productsPageComponents/CardsBlock'
 
 import { useTypedSelector } from '../hooks/useTypedSelector'
-import { useActions } from '../hooks/useActions'
+import { useActions, useCartActions } from '../hooks/useActions'
+import { IProduct } from '../types/types'
 
 function ProductsPageTobacco () {
   const [value, setValue] = React.useState('')
@@ -15,9 +17,14 @@ function ProductsPageTobacco () {
   const { sortBy } = useTypedSelector(sort => sort.sort)
   
   const { fetchProducts } = useActions()
+  const { setAddProductToCart } = useCartActions()
+  
+  const AddProdunctToCart = React.useCallback((obj: any) => {
+    setAddProductToCart(obj)
+  }, [])
   
   React.useEffect(() => {
-      fetchProducts('tobacco', sortBy, filterBy);
+    fetchProducts('tobacco', sortBy, filterBy);
   }, [sortBy, filterBy])
   
   if (isLoading) {
@@ -27,9 +34,10 @@ function ProductsPageTobacco () {
     return <h1>{error}</h1>
   }
   
-  const filterProducts = items.filter(item => {
+  const filterProducts: IProduct[] = items.filter(item => {
     return item.name.toLowerCase().includes(value.toLowerCase())
   })
+  
   
   
   return (
@@ -62,7 +70,7 @@ function ProductsPageTobacco () {
         </form>
         <div className="main">
           <SortAndFiltersBlockTobacco sortBy={sortBy} filterBy={filterBy}/>
-          <CardsBlock products={filterProducts}/>
+          <CardsBlock products={filterProducts} onClickAddProduct={AddProdunctToCart}/>
         </div>
       </div>
     </div>

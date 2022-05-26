@@ -23,11 +23,11 @@ const SortAndFiltersBlockTobacco: FC<SortAndFilters> = ({ sortBy, filterBy}) => 
   
   const activeSortItem = React.useCallback((item: any) => {
     setSortBy(item)
-  }, [])
+  }, [setSortBy])
 
   const activeFilterItem = React.useCallback((filtIndex: string) => {
     setFilterBy(filtIndex)
-  }, [])
+  }, [setFilterBy])
   
   return (
     <div className="sort-and-filters-block">

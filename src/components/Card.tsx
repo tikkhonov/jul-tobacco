@@ -3,11 +3,22 @@ import { IProduct } from '../types/types'
 
 interface CardProps {
   product: IProduct;
+  onClickAddProduct: any;
 }
 
-const Card: FC<CardProps> = (
-    {product}
-  ) => {
+const Card: FC<CardProps> = ({product, onClickAddProduct}) => {
+  const productObjs = {
+    id: product.id,
+    name: product.name, 
+    price: product.price,
+    size: product.size,
+    imageURL: product.imageURL,
+  }
+
+  const onAddProduct = () => {
+    onClickAddProduct(productObjs)
+  }
+  
   return (
     <div className="card">
       <div className="card-image">
@@ -65,12 +76,17 @@ const Card: FC<CardProps> = (
             <p>{product.name} {product.size}</p>
             <b>{product.price} ₽</b>
           </div>
-          <div className="card__button">
+          <button 
+            onClick={onAddProduct}
+            className="card__button"
+          >
             <div className="card__button_items">
               <span>В корзину</span>
-              <div className="button__item_counter"><span>3</span></div>
+              <div className="button__item_counter">
+                <span>3</span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>

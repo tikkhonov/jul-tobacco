@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
+import { useTypedSelector } from '../hooks/useTypedSelector'
+
 function Header() {
+  const { totalPrice, itemsCount } = useTypedSelector(item => ({
+    items: item.cart.items,
+    totalPrice: item.cart.totalPrice, 
+    itemsCount: item.cart.itemsCount,
+  }))
+
   return (
     <header>
       <div className="header-left">
@@ -60,9 +68,9 @@ function Header() {
                     fill="#efefef"
                   />
                 </svg>
-                <span>13</span>
+                <span>{itemsCount}</span>
               </div>
-              <span>1313 ₽</span>
+              <span>{totalPrice} ₽</span>
             </button>
           </Link>
         </div>
