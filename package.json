@@ -32,6 +32,7 @@
     "eject": "react-scripts eject",
     "jserver": "npx json-server --watch public/db.json --port=3004"
   },
+  "proxy": "http://localhost:3004",
   "eslintConfig": {
     "extends": [
       "react-app",

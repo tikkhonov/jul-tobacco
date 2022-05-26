@@ -16,6 +16,7 @@ function ProductsPageTobacco () {
   const { filterBy } = useTypedSelector(filters => filters.filter)
   const { sortBy } = useTypedSelector(sort => sort.sort)
   
+  
   const { fetchProducts } = useActions()
   const { setAddProductToCart } = useCartActions()
   

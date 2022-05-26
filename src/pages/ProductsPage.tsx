@@ -1,7 +1,8 @@
 import React from 'react'
 import Categories from '../components/mainPageComponents/Categories'
 
-function ProductsPage() {
+function ProductsPage () {
+  
   return (
     <div className="wrapper">
       <div className="lorem-text">

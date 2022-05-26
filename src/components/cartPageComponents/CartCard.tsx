@@ -1,6 +1,7 @@
 import React from 'react'
 
 function CartCard() {
+  
   return (
     <div className="cart__card">
       <div className="cart__item_circle">

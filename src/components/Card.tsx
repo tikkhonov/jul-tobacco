@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+
 import { IProduct } from '../types/types'
 
 interface CardProps {
@@ -80,11 +81,11 @@ const Card: FC<CardProps> = ({product, onClickAddProduct}) => {
             onClick={onAddProduct}
             className="card__button"
           >
-            <div className="card__button_items">
+            <div
+              onClick={() => alert(`${product.name} добавлен в корзину`)} 
+              className="card__button_items"
+            >
               <span>В корзину</span>
-              <div className="button__item_counter">
-                <span>3</span>
-              </div>
             </div>
           </button>
         </div>

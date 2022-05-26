@@ -9,8 +9,7 @@ export const fetchProducts = (address: string, sortBy?: {type: string, order: st
         type: ProductActionTypes.FETCH_PRODUCTS
       })
       const response = await axios.get(
-        `
-        http://localhost:3004/${address}?${
+        `/${address}?${
           filterBy !== undefined ? `category=${filterBy}` : ''
         }&_sort=${sortBy?.type}&_order=${sortBy?.order}
         `
