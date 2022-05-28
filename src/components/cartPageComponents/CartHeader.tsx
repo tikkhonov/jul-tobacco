@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-function CartHeader() {
+interface CartHeaderProps {
+  cartClear: any;
+}
+
+const CartHeader: FC<CartHeaderProps> = ({ cartClear }) => {
+
   return (
     <div className="cart--header">
       <div className="cart__header_title">
@@ -19,7 +24,7 @@ function CartHeader() {
         <span>&nbsp; Корзина</span>
       </div>
       <div className="cart__header_clear">
-        <span>очистить корзину  ✕</span>
+        <span onClick={cartClear}> очистить корзину  ✕ </span>
       </div>
     </div>
   )

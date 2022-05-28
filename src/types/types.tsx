@@ -73,14 +73,34 @@ export type SetFilterAction = FilterAction
 
 export interface CartState {
   items: any;
-  totalPrice: number;
-  itemsCount: number;
+  totalPrice: any;
+  itemsCount: any;
 }
 
 export enum CartActionTypes {
   SET_TOTAL_PRICE = "SET_TOTAL_PRICE",
   SET_ITEMS_COUNT = "SET_ITEMS_COUNT",
   SET_ADD_PRODUCTS_IN_CART = "SET_ADD_PRODUCTS_IN_CART",
+  SET_CART_CLEAR = "SET_CART_CLEAR",
+  SET_PLUS_CART_ITEM = "SET_PLUS_CART_ITEM",
+  SET_MINUS_CART_ITEM = "SET_MINUS_CART_ITEM",
+}
+
+interface PlusCartItemAction {
+  type: CartActionTypes.SET_PLUS_CART_ITEM;
+  payload: number;
+}
+
+interface MinusCartItemAction {
+  type: CartActionTypes.SET_MINUS_CART_ITEM;
+  payload: number;
+}
+
+interface CartClearAction {
+  type: CartActionTypes.SET_CART_CLEAR;
+  payload: {
+    items: any;
+  }
 }
 
 interface CartTotalPriceAction {
@@ -90,10 +110,14 @@ interface CartTotalPriceAction {
   }
 }
 
-interface AddProductsInCart {
+interface AddProductsInCartAction {
   type: CartActionTypes.SET_ADD_PRODUCTS_IN_CART;
   payload: {
-    items: any,
+    id: number;
+    name: string;
+    size: string;
+    price: number;
+    imageURL: string;
   }
 }
 
@@ -104,4 +128,10 @@ interface CartItemsCountAction {
   }
 }
 
-export type SetCartAction = CartItemsCountAction | CartTotalPriceAction | AddProductsInCart
+export type SetCartAction = 
+CartItemsCountAction 
+| CartTotalPriceAction 
+| AddProductsInCartAction 
+| CartClearAction
+| MinusCartItemAction
+| PlusCartItemAction

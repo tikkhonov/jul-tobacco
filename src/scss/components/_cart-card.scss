@@ -1,4 +1,5 @@
 .cart__card {
+  font-size: 24px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -17,19 +18,19 @@
     text-align: center;
 
     img {
+      width: 188px;
+      height: 188px;
       transform: translateY(29px);
     }
   }
 
   .cart__item_name {
-    font-size: 32px;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 50px;
     width: 400px;
     font-weight: 400;
   }
 
   .cart__item_price {
-    font-size: 32px;
     font-weight: 500;
   }
 
@@ -38,7 +39,7 @@
     align-items: center;
 
     .cart__button-plus {
-      margin: 0 26px 0 0;
+      margin: 0 13px;
       cursor: pointer;
       
       svg {
@@ -55,7 +56,7 @@
     }
 
     .cart__button-clear {
-      margin: 0 69px 0 0;
+      margin: 0 69px 0 13px;
       cursor: pointer;
 
       svg {

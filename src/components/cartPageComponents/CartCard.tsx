@@ -1,16 +1,50 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-function CartCard() {
+interface CartItemProps {
+  id: string | number;
+  name: string;
+  totalPrice: number;
+  itemsCount: number;
+  imageURL: string;
+  size: string;
+  onMinus: any;
+  onPlus: any;
+}
+
+const CartCard: FC<CartItemProps> = ({ 
+  id,
+  name, 
+  totalPrice, 
+  itemsCount, 
+  imageURL, 
+  size, 
+  onMinus, 
+  onPlus
+}) => {
+  
+  const handlePlusItem = () => {
+    onPlus(id)
+    console.log(id);
+  }
+
+  const handleMinusItem = () => {
+    onMinus(id)
+    console.log(id);
+    
+  }
   
   return (
     <div className="cart__card">
       <div className="cart__item_circle">
-        <img src="/img/image.png" alt="cart-item" width={218}/>
+        <img src={imageURL} alt="cart-item" width={218}/>
       </div>
-      <div className="cart__item_name">Северный Крепкий орешек 40г</div>
-      <div className="cart__item_price">260 ₽</div>
+      <div className="cart__item_name">{name} {size}</div>
+      <div className="cart__item_price">{totalPrice} ₽</div>
       <div className="cart__item_buttons">
-        <button className="cart__button-plus">
+        <button 
+          onClick={handlePlusItem}
+          className="cart__button-plus"
+        >
           <svg 
             width="70" 
             height="70" 
@@ -29,7 +63,13 @@ function CartCard() {
             />
           </svg>
         </button>
-        <button className="cart__button-clear">
+        <div className="cart__item_counter">
+          <b>{`${itemsCount} шт.`}</b>
+        </div>
+        <button 
+          onClick={handleMinusItem}
+          className="cart__button-clear"
+        >
           <svg 
             width="70" 
             height="70" 
